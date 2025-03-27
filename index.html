@@ -1,0 +1,899 @@
+<remix_instructions>The following is an artifact created from an earlier conversation. Please begin the conversation by reproducing the content in the appropriate artifact line by line without any change. Doing so will render the artifact in the UI and allows the user to interact with it. To maintain functionality and usefulness, any changes and remixes created in this conversation should maintain the full content each time without omission (e.g. Do not leave comments like “// Rest of the code here...”).</remix_instructions>
+<artifact>
+<title>월클 3개월 플랜 인터랙티브 가이드</title>
+<type>text/html</type>
+undefined
+<content><!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월클 3개월 플랜 가이드</title>
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #e8f0fe;
+            --secondary: #34a853;
+            --accent: #fbbc04;
+            --dark: #202124;
+            --light: #f8f9fa;
+            --gray: #dadce0;
+            --text: #3c4043;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary), #4285f4);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .intro h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .five-pillars {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pillars-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .pillar {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .pillar h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .weeks-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .week-box {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .week-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .week-header.study {
+            background-color: #4285f4;
+        }
+        
+        .week-header.chart {
+            background-color: #34a853;
+        }
+        
+        .week-header.finance {
+            background-color: #fbbc04;
+        }
+        
+        .week-header.material {
+            background-color: #ea4335;
+        }
+        
+        .week-header.market {
+            background-color: #9c27b0;
+        }
+        
+        .week-content {
+            background-color: white;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .week-content.active {
+            padding: 20px;
+            max-height: 1000px;
+        }
+        
+        .week-objective {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--primary-light);
+            border-radius: 8px;
+        }
+        
+        .week-objective h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .lectures-list {
+            margin-bottom: 20px;
+        }
+        
+        .lectures-list h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .lectures-list ol {
+            padding-left: 20px;
+        }
+        
+        .lectures-list li {
+            margin-bottom: 8px;
+        }
+        
+        .assignment {
+            padding: 15px;
+            background-color: #fef7e0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .assignment h4 {
+            color: #b06000;
+            margin-bottom: 10px;
+        }
+        
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .active .arrow {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .pillars-container {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>월클 3개월 플랜 가이드</h1>
+            <p>주식시장 독립을 위한 12주 학습 로드맵</p>
+        </header>
+        
+        <section class="intro">
+            <h2>상한선의 월클에 오신 것을 환영합니다</h2>
+            <p>
+                상한선의 월클은 단순히 '뉴스만' 전달하거나 '강의만' 알려주는 것을 넘어 
+                슈퍼개미 관점으로 시장을 해석하는 법을 함께 익혀가도록 돕고 있습니다.
+            </p>
+            <p>
+                이 3개월 플랜은 초보자라도 12주 동안 월클의 모든 강의를 단계적으로 학습하고,
+                매일 제공되는 시장 정보를 무리 없이 따라가면서 실제 매매에도 적용할 수 있는 루틴을 
+                완성하는 프로젝트입니다.
+            </p>
+        </section>
+        
+        <section class="five-pillars">
+            <h2>상한파이브 - 통합적인 투자 관점</h2>
+            <p>
+                주식투자는 다섯 가지 축이 서로 맞물려 돌아가는 '복합 게임'입니다.
+                어느 한쪽만 보면 놓치는 부분이 생기기 마련입니다.
+                상한파이브는 이 다섯 가지 축을 균형 있게 살펴보는 입체적 투자 방법을 의미합니다.
+            </p>
+            
+            <div class="pillars-container">
+                <div class="pillar">
+                    <h3>시장</h3>
+                    <p>코스피·코스닥 등 전체 지수 흐름 및 분위기</p>
+                </div>
+                <div class="pillar">
+                    <h3>재료</h3>
+                    <p>종목이나 섹터가 오르내리는 '이유'(뉴스·테마·이슈)</p>
+                </div>
+                <div class="pillar">
+                    <h3>수급</h3>
+                    <p>실제로 돈이 어디로 몰리는지(거래량·거래대금, 기관·외국인 매수세)</p>
+                </div>
+                <div class="pillar">
+                    <h3>차트</h3>
+                    <p>캔들·이평선·매물대 등 기술적 분석</p>
+                </div>
+                <div class="pillar">
+                    <h3>재무</h3>
+                    <p>기업의 근본적인 체력 확인</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="weeks-container">
+            <!-- Week 1 -->
+            <div class="week-box">
+                <div class="week-header study">
+                    <h3>1주차 - 공부법</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>백지장이 되어 공부법부터 익히는 시간입니다.</li>
+                            <li>슈퍼개미들이 평균 3번의 깡통을 차며 깨달은 지름길 공부법을 익힙니다.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 공부법 강의 (5강)</h4>
+                        <ol>
+                            <li>주식시장에서 절대 깡통 안 차고 성공하는 법</li>
+                            <li>월 억 버는 슈퍼개미들의 비밀노트</li>
+                            <li>평생 써먹는 돈이 되는 뉴스를 찾는 방법</li>
+                            <li>주식 슬럼프 없이 성장하는 비법</li>
+                            <li>고쳐지지 않는 주식투자 악습관 바꾸는 법</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>1주차 때 절대 매매 하지 마세요.</p>
+                        <p>아니 돈벌러 왔는데, 매매를 하지 말라니? 쌩뚱맞은 소리로 들리실 겁니다. 하지만, 바둑도 뒤에서 훈수두는 놈이 잘 보죠? 일단, 주식시장 뒤에서 바라보기 시작하면 보이지 않던 것들이 생깁니다. 주식시장에서 매매를 멈출 줄 아는 게, 큰 손실을 막습니다. 먼저 쉬고 공부부터 해보세요. 매매를 하지 않으면 성공입니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Week 2 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>2주차 - 기초 차트</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>캔들·이평선·거래량 등 기초 차트지표 이해</li>
+                            <li>매물대, 차트 패턴을 통한 종목 선정과 타이밍 포착법 습득</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>차트 공부 '이렇게' 하면 차트의 신이 됩니다</li>
+                            <li>차트 공부, '캔들'을 알면 '종목 선정'이 보인다</li>
+                            <li>'이평선'을 알면 '종목'과 '타이밍'이 보인다</li>
+                            <li>'거래량/거래대금'을 알면 주식 인생이 바뀐다</li>
+                            <li>'패턴'을 알면 '종목'과 '타이밍'이 보인다</li>
+                            <li>'매물대'를 알면 '종목'과 '타이밍'이 보인다</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>2주차 때도 매매하지 마세요.</p>
+                        <p>매일 딱 1종목만씩만 강의에서 배운대로 바라보세요. 더도말고 딱 1개만 보세요. 1분만 시간투자 하세요. 그면 성공입니다. 주식시장에서 매일 1%의 성장이 중요합니다. 이 1개씩 쌓이는 게 엄청 시너지가 커집니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Week 3 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>3주차 - 주봉 매매 기법</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>주봉 매매 기법의 기본 이해</li>
+                            <li>단타·스윙·중장기를 아우르는 주봉 활용 스킬 습득</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -1 탄-</li>
+                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -2 탄-</li>
+                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -3 탄-</li>
+                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -4 탄-</li>
+                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -5 탄-</li>
+                            <li>주봉 상한라인 매매법 -1 탄-</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>3주차 때도 매매하지 마세요.</p>
+                        <p>매일 딱 1종목만씩만 강의에서 배운대로 바라보세요.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Weeks 4-12 continue with the same pattern -->
+            <!-- Week 4 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>4주차 - 주봉 상한라인 및 보조도구</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>주봉 상한라인 매매법 심화</li>
+                            <li>프로그램 매매·눌림목 검색기 등 보조도구 활용 능력 키우기</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>주봉 상한라인 매매법 -2 탄-</li>
+                            <li>주봉 상한라인 매매법 -3 탄-</li>
+                            <li>주봉 돌파매매 방법</li>
+                            <li>주식고수들은 모두 써먹는 '프로그램 매매' 보는 법</li>
+                            <li>슈퍼개미 눌림목 검색기 설정법</li>
+                            <li>필승패턴</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Week 5 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>5주차 - 단기/스윙 패턴</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>단기·스윙매매에 활용 가능한 패턴(필승패턴, 눌림회복 등) 집중 학습</li>
+                            <li>분봉 거래량 분석, 밑꼬리 매매법 등 세부 스킬 익히기</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>필승패턴 급등신호 설정법</li>
+                            <li>눌림회복매매(돌파매매) - 1 편 -</li>
+                            <li>눌림회복매매(돌파매매) - 2 편 -</li>
+                            <li>급등하는 종목의 분봉상 거래량의 비밀</li>
+                            <li>평생 써먹는 밑꼬리 매매법</li>
+                            <li>N 자형 폭등 패턴</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 6 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>6주차 - 실전 매매패턴</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>20일선 돌파, 윗꼬리 캔들 등 실전 매매패턴 응용</li>
+                            <li>세력주 공략 노하우 및 '급등주 공통 공식' 이해</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>20 일선 돌파 패턴이 확률이 높을 때</li>
+                            <li>2 일 50% 매매법</li>
+                            <li>윗꼬리 캔들 매매법</li>
+                            <li>세력의 비밀을 알면, 수익을 낼 수 있다.</li>
+                            <li>천년이 지나도 바뀌지 않을 급등주 공식</li>
+                            <li>주봉 관심종목 중 안눌리고 오르는 종목들의 특징</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 7 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>7주차 - 극단적 시장상황 대응</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>극단적 시장상황에서의 대응법(투자경고, 급등 패턴)</li>
+                            <li>검색식·지표 설정 노하우로 실전 매매 역량 강화</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>투자경고 극비 강의</li>
+                            <li>실전투자대회 1 위들이 놀면서 써먹는 매매타이밍</li>
+                            <li>비상 차트/검색식 공유 강의</li>
+                            <li>기준봉 다음 날 조정 이후 급등 패턴</li>
+                            <li>시장 과하게 빠지면 오르는 구간을 잡는 지표 설정법</li>
+                            <li>캔들, 거래량 실전투자의 비밀 - 심화편</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 8 -->
+            <div class="week-box">
+                <div class="week-header chart">
+                    <h3>8주차 - 고급 차트 활용</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>이평선·주봉 돌파매매 심화 분석</li>
+                            <li>급등패턴 및 검색식 실전 활용 능력 극대화</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 차트 강의 (6강)</h4>
+                        <ol>
+                            <li>이평선 실전투자의 비밀 - 심화편</li>
+                            <li>주봉 돌파매매 확장편 - 주도주 사골매매</li>
+                            <li>주봉 상한라인 수식 설정법 + 상한선 종목선정 검색식</li>
+                            <li>시간외 급등으로 갭 음봉 후 다음 날 상승기대 공략패턴</li>
+                            <li>N 자형 내 거래대금 실린 윗꼬리 양봉 패턴</li>
+                            <li>월 1 억 버는 투자자들이 활용하는 '축구공 매매법'</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 9 -->
+            <div class="week-box">
+                <div class="week-header finance">
+                    <h3>9주차 - 재무 분석 기초</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>중장기와 단기 관점에서 필수적으로 확인해야 할 재무 항목 정리</li>
+                            <li>급작스러운 유상증자·전환사채 등 악재를 피할 수 있는 기본 재무 지표 숙지</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 재무 강의 (2강)</h4>
+                        <ol>
+                            <li>중장기로 들고가는 종목에서 꼭 체크해야 할 재무제표</li>
+                            <li>'단기매매용 재무제표'를 알면 월급독립이 보인다</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 10 -->
+            <div class="week-box">
+                <div class="week-header material">
+                    <h3>10주차 - 재료 분석 기초</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>재료(테마, 이슈) 선정 기준 파악</li>
+                            <li>'짧은 재료 vs 긴 재료' 구분법 및 차트와의 결합 방식 이해</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 재료 강의 (4강)</h4>
+                        <ol>
+                            <li>'재료'를 알면 월급독립이 보인다</li>
+                            <li>'재료의 통로'를 알면 월급독립이 보인다</li>
+                            <li>'100% 이상 오르는 이슈의 공통점'을 알면 월급독립이 보인다</li>
+                            <li>'재료 4 가지'만 알면 월급독립이 보인다</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 11 -->
+            <div class="week-box">
+                <div class="week-header material">
+                    <h3>11주차 - 재료 심화 분석</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>재료가 시장(지수)와 맞물려 크게 폭발할 때의 패턴 숙지</li>
+                            <li>강한 재료들의 공통점과 실제 매매사례 확인</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 재료 강의 (5강)</h4>
+                        <ol>
+                            <li>'차트와 재료의 관계'를 알면 월급독립이 보인다</li>
+                            <li>'강한 재료의 특징'을 알면 월급독립이 보인다</li>
+                            <li>'지수와 재료의 상관관계'를 알면 월급독립이 보인다</li>
+                            <li>재료공부를 하면, 주식이 쉬워진다</li>
+                            <li>주식공부 '헛고생' 하지말고 '월클재료'에 주목하세요.</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 12 -->
+            <div class="week-box">
+                <div class="week-header market">
+                    <h3>12주차 - 시장 대응 전략</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>시장 국면별(하락장·폭락장 등) 대응전략 수립</li>
+                            <li>'지수 흐름 & 수급' 분석을 통해 종합적인 포트폴리오 운용 능력 키우기</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 시장 강의 (5강)</h4>
+                        <ol>
+                            <li>500 만 원으로 1100 억을 만든 쿨라매기가 알려주는 '매매를 쉬어가야 할 때'</li>
+                            <li>지수 낙폭과대 필승 매매법 (지수의 고점과 저점 특징, 반등 초입 대응전략)</li>
+                            <li>주식시장을 이해하기 위해 무조건 봐야 할 영상</li>
+                            <li>09/25 장중 번개방송 녹화본</li>
+                            <li>최근 시장의 특징(수급주들의 폭등시그널)</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>추후 안내 예정</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="summary" style="margin-top: 40px; background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+            <h2 style="color: var(--primary); margin-bottom: 20px;">3개월 플랜 정리</h2>
+            <p>
+                이 12주 과정을 통해 주식투자의 모든 영역(공부법 → 차트 → 재무 → 재료 → 시장)을 체계적으로 학습하게 됩니다.
+                특히 '상한파이브'라는 통합적 관점으로 시장을 바라보는 법을 익히게 될 것입니다.
+            </p>
+            <p style="margin-top: 15px;">
+                초반 3주는 실제 매매없이 관찰과 학습에 집중함으로써 안정적인 기초를 다지고,
+                이후 단계별로 실전 매매 스킬을 쌓아가는 구조로 설계되어 있습니다.
+            </p>
+            <p style="margin-top: 15px;">
+                '지금부터라도 월클을 100% 제대로 활용하고 싶다'는 분들, 
+                '주식시장에서 이젠 정말 독립할 만한 실력을 갖추고 싶다'는 분들에게 
+                이 3개월 플랜이 큰 도움이 될 것입니다.
+            </p>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const weekHeaders = document.querySelectorAll('.week-header');
+            const weekBoxes = document.querySelectorAll('.week-box');
+            
+            // Progress tracking (use in-memory variable instead of localStorage)
+            let completedWeeks = [];
+            
+            // Initialize progress indicators
+            weekBoxes.forEach((box, index) => {
+                const weekNum = index + 1;
+                const header = box.querySelector('.week-header');
+                
+                // Add progress indicator to each week header
+                const progressIndicator = document.createElement('div');
+                progressIndicator.className = 'progress-indicator';
+                progressIndicator.style.marginRight = '10px';
+                progressIndicator.style.width = '20px';
+                progressIndicator.style.height = '20px';
+                progressIndicator.style.borderRadius = '50%';
+                progressIndicator.style.backgroundColor = completedWeeks.includes(weekNum) ? '#34a853' : '#dadce0';
+                progressIndicator.style.display = 'flex';
+                progressIndicator.style.justifyContent = 'center';
+                progressIndicator.style.alignItems = 'center';
+                progressIndicator.style.color = 'white';
+                progressIndicator.style.fontSize = '12px';
+                progressIndicator.style.fontWeight = 'bold';
+                progressIndicator.innerHTML = completedWeeks.includes(weekNum) ? '✓' : '';
+                
+                // Insert at beginning of header
+                header.insertBefore(progressIndicator, header.firstChild);
+                
+                // Modify header display to accommodate the indicator
+                header.style.display = 'flex';
+                header.style.justifyContent = 'space-between';
+                header.style.alignItems = 'center';
+                
+                // Add checkbox for completion within the content
+                const content = box.querySelector('.week-content');
+                const completeBox = document.createElement('div');
+                completeBox.className = 'complete-box';
+                completeBox.style.marginTop = '20px';
+                completeBox.style.padding = '15px';
+                completeBox.style.backgroundColor = '#f0f8ff';
+                completeBox.style.borderRadius = '8px';
+                completeBox.style.display = 'flex';
+                completeBox.style.alignItems = 'center';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `week-${weekNum}-complete`;
+                checkbox.checked = completedWeeks.includes(weekNum);
+                checkbox.style.marginRight = '10px';
+                checkbox.style.width = '20px';
+                checkbox.style.height = '20px';
+                
+                const label = document.createElement('label');
+                label.htmlFor = `week-${weekNum}-complete`;
+                label.textContent = `${weekNum}주차 강의를 완료했어요!`;
+                label.style.fontWeight = 'bold';
+                label.style.cursor = 'pointer';
+                
+                completeBox.appendChild(checkbox);
+                completeBox.appendChild(label);
+                content.appendChild(completeBox);
+                
+                // Event listener for checkbox
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        if (!completedWeeks.includes(weekNum)) {
+                            completedWeeks.push(weekNum);
+                            progressIndicator.style.backgroundColor = '#34a853';
+                            progressIndicator.innerHTML = '✓';
+                        }
+                    } else {
+                        const index = completedWeeks.indexOf(weekNum);
+                        if (index > -1) {
+                            completedWeeks.splice(index, 1);
+                            progressIndicator.style.backgroundColor = '#dadce0';
+                            progressIndicator.innerHTML = '';
+                        }
+                    }
+                    updateProgress();
+                });
+            });
+            
+            // Add progress bar to the top
+            const container = document.querySelector('.container');
+            const header = document.querySelector('header');
+            
+            const progressContainer = document.createElement('div');
+            progressContainer.className = 'progress-container';
+            progressContainer.style.backgroundColor = 'white';
+            progressContainer.style.padding = '20px';
+            progressContainer.style.borderRadius = '12px';
+            progressContainer.style.marginBottom = '30px';
+            progressContainer.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+            
+            const progressTitle = document.createElement('h2');
+            progressTitle.textContent = '학습 진행 상황';
+            progressTitle.style.color = 'var(--primary)';
+            progressTitle.style.marginBottom = '15px';
+            
+            const progressBarContainer = document.createElement('div');
+            progressBarContainer.style.width = '100%';
+            progressBarContainer.style.height = '15px';
+            progressBarContainer.style.backgroundColor = '#f1f3f4';
+            progressBarContainer.style.borderRadius = '10px';
+            progressBarContainer.style.overflow = 'hidden';
+            
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            progressBar.style.height = '100%';
+            progressBar.style.width = `${(completedWeeks.length / 12) * 100}%`;
+            progressBar.style.backgroundColor = 'var(--secondary)';
+            progressBar.style.transition = 'width 0.3s ease';
+            
+            const progressText = document.createElement('div');
+            progressText.className = 'progress-text';
+            progressText.style.marginTop = '10px';
+            progressText.style.display = 'flex';
+            progressText.style.justifyContent = 'space-between';
+            
+            const progressPercentage = document.createElement('span');
+            progressPercentage.textContent = `${Math.round((completedWeeks.length / 12) * 100)}% 완료`;
+            progressPercentage.style.fontWeight = 'bold';
+            
+            const progressCount = document.createElement('span');
+            progressCount.textContent = `${completedWeeks.length}/12 강의 완료`;
+            
+            progressText.appendChild(progressPercentage);
+            progressText.appendChild(progressCount);
+            
+            progressBarContainer.appendChild(progressBar);
+            progressContainer.appendChild(progressTitle);
+            progressContainer.appendChild(progressBarContainer);
+            progressContainer.appendChild(progressText);
+            
+            container.insertBefore(progressContainer, header.nextSibling);
+            
+            function updateProgress() {
+                progressBar.style.width = `${(completedWeeks.length / 12) * 100}%`;
+                progressPercentage.textContent = `${Math.round((completedWeeks.length / 12) * 100)}% 완료`;
+                progressCount.textContent = `${completedWeeks.length}/12 강의 완료`;
+            }
+            
+            // Click event for week headers
+            weekHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                    this.classList.toggle('active');
+                    
+                    // Toggle arrow rotation
+                    const arrow = this.querySelector('.arrow');
+                    if (content.classList.contains('active')) {
+                        arrow.textContent = '▲';
+                    } else {
+                        arrow.textContent = '▼';
+                    }
+                });
+            });
+            
+            // Open first week by default
+            document.querySelector('.week-content').classList.add('active');
+            document.querySelector('.week-header').classList.add('active');
+            document.querySelector('.week-header .arrow').textContent = '▲';
+            
+            // Add reset button
+            const resetButton = document.createElement('button');
+            resetButton.textContent = '진행 상황 초기화';
+            resetButton.style.marginTop = '15px';
+            resetButton.style.padding = '8px 16px';
+            resetButton.style.backgroundColor = '#f1f3f4';
+            resetButton.style.border = 'none';
+            resetButton.style.borderRadius = '4px';
+            resetButton.style.cursor = 'pointer';
+            resetButton.style.float = 'right';
+            
+            resetButton.addEventListener('click', function() {
+                if (confirm('진행 상황을 초기화하시겠습니까?')) {
+                    completedWeeks = [];
+                    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                    document.querySelectorAll('.progress-indicator').forEach(indicator => {
+                        indicator.style.backgroundColor = '#dadce0';
+                        indicator.innerHTML = '';
+                    });
+                    updateProgress();
+                }
+            });
+            
+            progressContainer.appendChild(resetButton);
+        });
+    </script>
+</body>
+</html></content>
+</artifact>
