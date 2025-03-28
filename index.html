@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>월클 3개월 플랜 가이드</title>
+    <title>3개월 슈퍼개미 프로젝트</title>
     <style>
         :root {
-            --primary: #1a73e8;
-            --primary-light: #e8f0fe;
+            --primary: #FF6B00; /* 자신감을 주는 오렌지 컬러로 변경 */
+            --primary-light: #FFF0E6;
             --secondary: #34a853;
             --accent: #fbbc04;
             --dark: #202124;
             --light: #f8f9fa;
             --gray: #dadce0;
-            --text: #3c4043;
+            --text: #333333;
         }
         
         * {
@@ -27,6 +27,7 @@
             background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
+            font-size: 16px; /* 기본 글자 크기 증가 */
         }
         
         .container {
@@ -39,19 +40,19 @@
             text-align: center;
             margin-bottom: 40px;
             padding: 30px 0;
-            background: linear-gradient(135deg, var(--primary), #4285f4);
+            background: linear-gradient(135deg, var(--primary), #FF9248);
             color: white;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem; /* 제목 글자 크기 증가 */
             margin-bottom: 15px;
         }
         
         header p {
-            font-size: 1.2rem;
+            font-size: 1.4rem; /* 부제목 글자 크기 증가 */
             max-width: 800px;
             margin: 0 auto;
         }
@@ -67,6 +68,12 @@
         .intro h2 {
             color: var(--primary);
             margin-bottom: 20px;
+            font-size: 1.8rem; /* 섹션 제목 글자 크기 증가 */
+        }
+        
+        .intro p {
+            font-size: 1.1rem; /* 본문 글자 크기 증가 */
+            margin-bottom: 15px;
         }
         
         .five-pillars {
@@ -75,6 +82,17 @@
             border-radius: 12px;
             margin-bottom: 30px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .five-pillars h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem; /* 섹션 제목 글자 크기 증가 */
+        }
+        
+        .five-pillars p {
+            font-size: 1.1rem; /* 본문 글자 크기 증가 */
+            margin-bottom: 15px;
         }
         
         .pillars-container {
@@ -96,6 +114,11 @@
         .pillar h3 {
             color: var(--primary);
             margin-bottom: 10px;
+            font-size: 1.3rem; /* 필러 제목 글자 크기 증가 */
+        }
+        
+        .pillar p {
+            font-size: 1.05rem; /* 필러 내용 글자 크기 증가 */
         }
         
         .weeks-container {
@@ -121,24 +144,28 @@
             align-items: center;
         }
         
+        .week-header h3 {
+            font-size: 1.4rem; /* 주차 제목 글자 크기 증가 */
+        }
+        
         .week-header.study {
-            background-color: #4285f4;
+            background-color: #FF6B00; 
         }
         
         .week-header.chart {
-            background-color: #34a853;
+            background-color: #FF8534; 
         }
         
         .week-header.finance {
-            background-color: #fbbc04;
+            background-color: #FF6B00; 
         }
         
         .week-header.material {
-            background-color: #ea4335;
+            background-color: #FF6B00; 
         }
         
         .week-header.market {
-            background-color: #9c27b0;
+            background-color: #FF6B00; 
         }
         
         .week-content {
@@ -151,48 +178,95 @@
         
         .week-content.active {
             padding: 20px;
-            max-height: 1000px;
+            max-height: 2000px; /* 높이 증가 */
         }
         
         .week-objective {
             margin-bottom: 20px;
-            padding: 15px;
+            padding: 20px;
             background-color: var(--primary-light);
             border-radius: 8px;
         }
         
         .week-objective h4 {
             color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem; /* 학습목표 제목 글자 크기 증가 */
+        }
+        
+        .week-objective ul {
+            padding-left: 20px;
+            font-size: 1.1rem; /* 학습목표 내용 글자 크기 증가 */
+        }
+        
+        .week-objective li {
             margin-bottom: 10px;
         }
         
         .lectures-list {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .lectures-list h4 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--dark);
+            font-size: 1.3rem; /* 강의목록 제목 글자 크기 증가 */
         }
         
         .lectures-list ol {
-            padding-left: 20px;
+            padding-left: 25px;
         }
         
         .lectures-list li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-size: 1.1rem; /* 강의목록 내용 글자 크기 증가 */
+        }
+        
+        .lectures-list a {
+            color: var(--primary);
+            text-decoration: none;
+            margin-left: 8px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            padding: 2px 8px;
+            background-color: #fff;
+            font-size: 0.9rem;
+        }
+        
+        .lectures-list a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .lectures-list .link-icon {
+            margin-left: 5px;
+            font-size: 0.8rem;
         }
         
         .assignment {
-            padding: 15px;
-            background-color: #fef7e0;
+            padding: 20px;
+            background-color: #FFF7F2; 
             border-radius: 8px;
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--primary);
         }
         
         .assignment h4 {
-            color: #b06000;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem; /* 과제 제목 글자 크기 증가 */
+        }
+        
+        .assignment p {
+            font-size: 1.1rem; /* 과제 내용 글자 크기 증가 */
             margin-bottom: 10px;
+        }
+        
+        .assignment strong {
+            font-weight: bold;
+            color: var(--primary);
         }
         
         .arrow {
@@ -209,11 +283,11 @@
             }
             
             header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
             header p {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -221,20 +295,25 @@
 <body>
     <div class="container">
         <header>
-            <h1>월클 3개월 플랜 가이드</h1>
-            <p>주식시장 독립을 위한 12주 학습 로드맵</p>
+            <h1>3개월 슈퍼개미 프로젝트</h1>
+            <p>월급독립을 위한 12주 학습 로드맵</p>
         </header>
         
         <section class="intro">
-            <h2>상한선의 월클에 오신 것을 환영합니다</h2>
+            <h2>여러분의 5년의 방황, 1억을 절약 해드립니다</h2>
             <p>
-                상한선의 월클은 단순히 '뉴스만' 전달하거나 '강의만' 알려주는 것을 넘어 
-                슈퍼개미 관점으로 시장을 해석하는 법을 함께 익혀가도록 돕고 있습니다.
+                저도 여러분들 만큼이나 월급독립이 간절했습니다. 유료강의에 2천만원을 써보고, 매매하다 날린 수업료가 억 단위가 됩니다. 그리고, 시행착오를 겪으면서 방황했던 5년의 시간도 있었습니다.
             </p>
             <p>
-                이 3개월 플랜은 초보자라도 12주 동안 월클의 모든 강의를 단계적으로 학습하고,
-                매일 제공되는 시장 정보를 무리 없이 따라가면서 실제 매매에도 적용할 수 있는 루틴을 
-                완성하는 프로젝트입니다.
+                지나고보니, 길을 알려주는 사람이 있었다면, 모두 절약할 수 있었습니다.
+                상한선의 월클강의는 하루 커피한잔 값으로 이 모든 걸 절약 시켜드립니다.
+            </p>
+            <p>
+                상한선의 월클강의는 슈퍼개미들이 주린이 시절을 회상할 때, 시간을 아낄 수 있는 지름길로 갈 수 있는 루틴으로 구성했습니다. 
+                3개월 월클 강의로 5년 방황과 1억을 절약하세요. 초보자라도 12주 동안 월클의 모든 강의를 단계적으로 학습하도록 안내했습니다. 
+            </p>
+            <p>
+                여러분들도 할 수 있습니다!
             </p>
         </section>
         
@@ -271,10 +350,10 @@
         </section>
         
         <div class="weeks-container">
-            <!-- Week 1 -->
+            <!-- WEEK 1 -->
             <div class="week-box">
                 <div class="week-header study">
-                    <h3>1주차 - 공부법</h3>
+                    <h3>WEEK 1 – 슈퍼개미 되는 지름길 공부법</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
@@ -289,604 +368,766 @@
                     <div class="lectures-list">
                         <h4>월클 공부법 강의 (5강)</h4>
                         <ol>
-                            <li>주식시장에서 절대 깡통 안 차고 성공하는 법</li>
-                            <li>월 억 버는 슈퍼개미들의 비밀노트</li>
-                            <li>평생 써먹는 돈이 되는 뉴스를 찾는 방법</li>
-                            <li>주식 슬럼프 없이 성장하는 비법</li>
-                            <li>고쳐지지 않는 주식투자 악습관 바꾸는 법</li>
+                            <li>
+                                주식시장에서 절대 깡통 안 차고 성공하는 법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230222104803632sl" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                월 억 버는 슈퍼개미들의 비밀노트
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230301184900245jm" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                평생 써먹는 돈이 되는 뉴스를 찾는 방법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230301184900245jm" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주식 슬럼프 없이 성장하는 비법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230315143023444ku" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                고쳐지지 않는 주식투자 악습관 바꾸는 법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/240826171000175bi" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>1주차 때 절대 매매 하지 마세요.</p>
-                        <p>아니 돈벌러 왔는데, 매매를 하지 말라니? 쌩뚱맞은 소리로 들리실 겁니다. 하지만, 바둑도 뒤에서 훈수두는 놈이 잘 보죠? 일단, 주식시장 뒤에서 바라보기 시작하면 보이지 않던 것들이 생깁니다. 주식시장에서 매매를 멈출 줄 아는 게, 큰 손실을 막습니다. 먼저 쉬고 공부부터 해보세요. 매매를 하지 않으면 성공입니다.</p>
+                        <p>
+                            <strong>1주차 때 매매하지 마세요. 가입비 100배 가치 + 5년 절약 됩니다.</strong><br>
+                            아니 주식해서 돈 벌어야지? 매매를 하지 말라니? 쌩뚱맞은 소리로 들리실 겁니다. 그리고, 매매일지 쓰라며 안쓰고 내가 어떻게 복기를 해? 생각하실 겁니다. 하지만, 바둑도 뒤에서 훈수두는 놈이 잘 보죠? 몸도 음식 섭취를 안하면 독소가 빠지듯, 주식도 쉬어야 맑은 눈을 갖습니다.
+                        </p>
+                        <p>
+                            <strong>쉴 줄 몰라서 깡통차면 5년이 늦어집니다.</strong> 주식시장에서 매매를 멈출 줄 아는 게, 상대방의 패를 읽는 전략입니다. 이 쉴줄 아는 것만으로도 99,000원의 10배 가치와 5년이 절약됩니다. 왜? 멈출 줄 몰라서 깡통 차거든요.
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Week 2 -->
+            <!-- WEEK 2 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>2주차 - 기초 차트</h3>
+                    <h3>WEEK 2 차트강의1 : 슈퍼개미가 보는 차트 시선</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>캔들·이평선·거래량 등 기초 차트지표 이해</li>
-                            <li>매물대, 차트 패턴을 통한 종목 선정과 타이밍 포착법 습득</li>
+                            <li>슈퍼개미급으로 차트 보는 법</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
                         <h4>월클 차트 강의 (6강)</h4>
                         <ol>
-                            <li>차트 공부 '이렇게' 하면 차트의 신이 됩니다</li>
-                            <li>차트 공부, '캔들'을 알면 '종목 선정'이 보인다</li>
-                            <li>'이평선'을 알면 '종목'과 '타이밍'이 보인다</li>
-                            <li>'거래량/거래대금'을 알면 주식 인생이 바뀐다</li>
-                            <li>'패턴'을 알면 '종목'과 '타이밍'이 보인다</li>
-                            <li>'매물대'를 알면 '종목'과 '타이밍'이 보인다</li>
+                            <li>
+                                차트 공부 '이렇게' 하면 차트의 신이 됩니다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230322151039369br" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                차트 공부, '캔들'을 알면 '종목 선정'이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230329155352523ta" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '이평선'을 알면 '종목'과 '타이밍'이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230405141950510hg" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '거래량/거래대금'을 알면 주식 인생이 바뀐다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230412134046938ls" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '패턴'을 알면 '종목'과 '타이밍'이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230419140630858zy" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '매물대'를 알면 '종목'과 '타이밍'이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230426153227291od" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>2주차 때도 매매하지 마세요.</p>
-                        <p>매일 딱 1종목만씩만 강의에서 배운대로 바라보세요. 더도말고 딱 1개만 보세요. 1분만 시간투자 하세요. 그면 성공입니다. 주식시장에서 매일 1%의 성장이 중요합니다. 이 1개씩 쌓이는 게 엄청 시너지가 커집니다.</p>
+                        <p>
+                            <strong>-2주차 때도 매매하지 마세요.</strong><br>
+                            - 딱 3종목만 강의에서 배운대로 바라봐 보세요.
+                        </p>
+                        <p>
+                            강의를 들으시고, 딱 3종목만 강의에서 배운대로 바라봐 보세요. 더도말고 딱 하루에 3개만 보세요. 5분만 시간투자 하세요. 그면 성공입니다. 주식시장에서 매일 1%의 성장이 중요합니다. 이 5분 투자가 쌓이는 게 엄청 시너지가 커집니다.
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Week 3 -->
+            <!-- WEEK 3 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>3주차 - 주봉 매매 기법</h3>
+                    <h3>WEEK 3 : 차트강의2 : 슈퍼개미들만 남몰래 써먹는 주봉차트</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>주봉 매매 기법의 기본 이해</li>
-                            <li>단타·스윙·중장기를 아우르는 주봉 활용 스킬 습득</li>
+                            <li>주봉의 중요성 깨닫기 (윌리엄오닐은 주봉을 보고 연평균 수익률 40%)</li>
+                            <li>주봉 상 급등의 출발을 알리는 월클 패턴 공부</li>
+                            <li>종목선정 시 월클패턴 참고하기</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 차트 강의 (6강)</h4>
-                        <ol>
-                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -1 탄-</li>
-                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -2 탄-</li>
-                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -3 탄-</li>
-                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -4 탄-</li>
-                            <li>'주봉 매매'를 알면 투자의 대가가 될 수 있다 -5 탄-</li>
-                            <li>주봉 상한라인 매매법 -1 탄-</li>
+                        <h4>월클 차트 강의 (5강)</h4>
+                        <ol start="7">
+                            <li>
+                                ‘주봉 매매’를 알면 투자의 대가가 될 수 있다 -1 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230503154545678xi" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                ‘주봉 매매’를 알면 투자의 대가가 될 수 있다 -2 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230510141746021lv" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                ‘주봉 매매’를 알면 투자의 대가가 될 수 있다 -3 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230517150925266fx" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                ‘주봉 매매’를 알면 투자의 대가가 될 수 있다 -4 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230524154656943ld" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                ‘주봉 매매’를 알면 투자의 대가가 될 수 있다 -5 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230531150609561sq" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>3주차 때도 매매하지 마세요.</p>
-                        <p>매일 딱 1종목만씩만 강의에서 배운대로 바라보세요.</p>
+                        <p>
+                            <strong>-3주차 때도 매매하지 마세요.</strong><br>
+                            - 강의에서 들은 내용을 바탕으로 월클 패턴에 맞는 종목들을 각각 5개씩 찾아보세요.
+                        </p>
+                        <p>
+                            주봉 상 월클 패턴은 차트로 종목선정 시 밑바탕이 되는 내용입니다. 3주차 때는 숙제를 조금 더 드릴게요. 강의에서 들은 내용을 바탕으로 월클 패턴에 맞는 종목들을 각각 5개씩 찾아보세요.
+                            그리고, 일봉과 분봉에서는 볼 수 없었던 지지와 저항을 느끼며, 주봉의 힘을 느껴보세요.
+                            일봉에서는 꼬리가 달렸는데, 알고보니 주봉 상 저항이 있을 때가 많습니다. 이것만 깨달아도 3주차 성공입니다.
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Week 4 -->
+            <!-- WEEK 4 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>4주차 - 주봉 상한라인 및 보조도구</h3>
+                    <h3>WEEK 4 : 차트강의3 : 월클차트 종목선정 + 눌림목 매매</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>주봉 상한라인 매매법 심화</li>
-                            <li>프로그램 매매·눌림목 검색기 등 보조도구 활용 능력 키우기</li>
+                            <li>남들은 분봉과 호가창에 시간 빼앗길 때, 주봉으로 시간적 자유 얻으며 매매하기</li>
+                            <li>주봉 상 눌림목 매매를 위한, 종목선정/매매타이밍 학습</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 차트 강의 (6강)</h4>
-                        <ol>
-                            <li>주봉 상한라인 매매법 -2 탄-</li>
-                            <li>주봉 상한라인 매매법 -3 탄-</li>
-                            <li>주봉 돌파매매 방법</li>
-                            <li>주식고수들은 모두 써먹는 '프로그램 매매' 보는 법</li>
-                            <li>슈퍼개미 눌림목 검색기 설정법</li>
-                            <li>필승패턴</li>
+                        <h4>월클 차트 강의 (3강)</h4>
+                        <ol start="12">
+                            <li>
+                                주봉 상한라인 매매법 -1 탄
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230614155707213ug" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주봉 상한라인 매매법 -2 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230621161520744es" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주봉 상한라인 매매법 -3 탄-
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230628154648443pu" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <p>
+                            <strong>종목선정과 매매타이밍에 맞는 차트에서 1주로만 매매하세요.</strong>
+                        </p>
+                        <p>
+                            왜냐하면, 재료/시장/재무까지 학습해야 조금씩 투자금을 늘릴 수 있습니다. 차트만 보고 매매하면 망하기 때문입니다. 다만, 1주로 차트에 대해 감을 익히는 건 추천드립니다. 절대 투자금 늘리지 마세요. 이해가 되지 않거나 익히는 데 시간이 걸린다면, 4주차에서 1~2주 더 학습해도 됩니다.
+                        </p>
+                        <p>
+                            그리고, 손절이 된다 하더라도 실패가 아닙니다. 나중에 확률을 높이는 방법들을 배울 테니 1주로 경험만 하세요.
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Week 5 -->
+            <!-- WEEK 5 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>5주차 - 단기/스윙 패턴</h3>
+                    <h3>WEEK 5 차트강의4 : 1억 절약해주는 필승패턴</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>단기·스윙매매에 활용 가능한 패턴(필승패턴, 눌림회복 등) 집중 학습</li>
-                            <li>분봉 거래량 분석, 밑꼬리 매매법 등 세부 스킬 익히기</li>
+                            <li>5년을 절약시켜주는 필승패턴을 통해, 확률높은 종목 발굴하기</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 차트 강의 (6강)</h4>
-                        <ol>
-                            <li>필승패턴 급등신호 설정법</li>
-                            <li>눌림회복매매(돌파매매) - 1 편 -</li>
-                            <li>눌림회복매매(돌파매매) - 2 편 -</li>
-                            <li>급등하는 종목의 분봉상 거래량의 비밀</li>
-                            <li>평생 써먹는 밑꼬리 매매법</li>
-                            <li>N 자형 폭등 패턴</li>
+                        <h4>월클 차트 강의 (5강)</h4>
+                        <ol start="18">
+                            <li>
+                                필승패턴
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/241031110745251gs" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                필승패턴 급등신호 설정법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250115102721583qk" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                급등하는 종목의 분봉상 거래량의 비밀
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250207133351251dd" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                캔들, 거래량 실전투자의 비밀 - 심화편
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250106182738975lz" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                [월클 차트 패턴] (급등패턴) N자형 내 거래대금 실린 윗꼬리 양봉 패턴
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250107141851711mt" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
-                        <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <h4>과제 (추후에)</h4>
+                        <p>
+                            <strong>필승패턴 과거 사례 30개 찾아보기</strong><br>
+                            30개 숙제가 좀 많죠? 하지만, 제가 주린이 때 알았더라도 1억은 절약하지 않았을까 싶습니다.
+                        </p>
+                        <p>
+                            필승패턴으로 거래량/거래대금을 보는 눈이 달라지셨을 겁니다. 필승패턴은 일봉, 주봉, 월봉에서도 모두 써먹힙니다. 그 말은, 단타/중장기 막론하고 알아둬야 할 중요한 패턴입니다. 제가 자주 강조하는 패턴이라 꼭 잘 학습하셔야 됩니다.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 6 -->
+            <!-- WEEK 6 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>6주차 - 실전 매매패턴</h3>
+                    <h3>WEEK 6 : 차트강의5 : 주봉 돌파매매</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>20일선 돌파, 윗꼬리 캔들 등 실전 매매패턴 응용</li>
-                            <li>세력주 공략 노하우 및 '급등주 공통 공식' 이해</li>
+                            <li>주봉 상 눌리지 않고 오르는 종목에 대한 공략법</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
                         <h4>월클 차트 강의 (6강)</h4>
                         <ol>
-                            <li>20 일선 돌파 패턴이 확률이 높을 때</li>
-                            <li>2 일 50% 매매법</li>
-                            <li>윗꼬리 캔들 매매법</li>
-                            <li>세력의 비밀을 알면, 수익을 낼 수 있다.</li>
-                            <li>천년이 지나도 바뀌지 않을 급등주 공식</li>
-                            <li>주봉 관심종목 중 안눌리고 오르는 종목들의 특징</li>
+                            <li>
+                                주봉 돌파매매 방법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230705143939826mg" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                눌림회복매매(돌파매매) - 1 편 –
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250123112155083uc" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                눌림회복매매(돌파매매) - 2 편 –
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250124161048816qk" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주봉 돌파매매 확장편 - 주도주 사골매매
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250106185712803dc" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주봉 관심종목 중 안눌리고 오르는 종목들의 특징
+                                <a href="https://suikasak789.imweb.me/60/?idx=16309332&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                기준봉 다음 날 조정 이후 급등 패턴
+                                <a href="https://suikasak789.imweb.me/60/?idx=16441511&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <p>
+                            <strong>주봉 돌파매매 1주로만 연습하세요.</strong><br>
+                            사람마다 돌파와 눌림매매 중 자신에게 맞는 매매가 따로 있습니다. 저는 여러분들에게 다양한 방법의 선택지를 제공합니다. 단, 돌파매매 자체가 난이도가 높은 매매입니다. 손절 기준을 지키지 않을 경우, 주린이들은 힘들 수 있습니다. 먼저, 자신에게 맞는 매매인지부터 파악해보세요.
+                        </p>
+                        <p>
+                            재료/재무/시장까지 다 배워야 투자금을 늘릴 수 있습니다. 지금은 안됩니다. 1주로만 해보세요.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 7 -->
+            <!-- WEEK 7 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>7주차 - 극단적 시장상황 대응</h3>
+                    <h3>WEEK 7: 차트강의6: 천년이 지나도 바뀌지 않을 급등주 공식</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>극단적 시장상황에서의 대응법(투자경고, 급등 패턴)</li>
-                            <li>검색식·지표 설정 노하우로 실전 매매 역량 강화</li>
+                            <li>바뀌지 않을 급등주 공식을 학습하여, 매매에 확신을 가진다.</li>
+                            <li>그간 배운 차트의 심화강의라 볼 수 있으며, 사고의 폭을 넓혀 해석한다.</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 차트 강의 (6강)</h4>
+                        <h4>월클 차트 강의 (4강)</h4>
                         <ol>
-                            <li>투자경고 극비 강의</li>
-                            <li>실전투자대회 1 위들이 놀면서 써먹는 매매타이밍</li>
-                            <li>비상 차트/검색식 공유 강의</li>
-                            <li>기준봉 다음 날 조정 이후 급등 패턴</li>
-                            <li>시장 과하게 빠지면 오르는 구간을 잡는 지표 설정법</li>
-                            <li>캔들, 거래량 실전투자의 비밀 - 심화편</li>
+                            <li>
+                                09/03 세력의 비밀을 알면, 수익을 낼 수 있다.
+                                <a href="https://suikasak789.imweb.me/60/?idx=16221768&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                09/10 천년이 지나도 바뀌지 않을 급등주 공식
+                                <a href="https://suikasak789.imweb.me/60/?idx=16301975&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                09/17 실전투자대회 1위들이 놀면서 써먹는 매매타이밍
+                                <a href="https://suikasak789.imweb.me/60/?idx=16369359&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                09/24 비상 차트/검색식 공유 강의
+                                <a href="https://suikasak789.imweb.me/60/?idx=16437303&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <p>
+                            <strong>이번 강의는 2번 반복해서 들어주세요.</strong><br>
+                            남들은 얘기할 수 없는 주식시장의 비밀을 다룹니다. 따라서, 1번만 듣고 지나가면 안됩니다. 꼭 2번 반복해서 들어서 여러분들 것으로 만들어 주시길 바랍니다. 꼭 1주일안에 2번 반복을 할 필요 없으니, 스케줄에 맞춰서 반복해서 들어주세요.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 8 -->
+            <!-- WEEK 8 -->
             <div class="week-box">
                 <div class="week-header chart">
-                    <h3>8주차 - 고급 차트 활용</h3>
+                    <h3>WEEK 8 차트강의7: 차트패턴 학습</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>이평선·주봉 돌파매매 심화 분석</li>
-                            <li>급등패턴 및 검색식 실전 활용 능력 극대화</li>
+                            <li>월클 눌림, 돌파매매법을 응용하여 다양하게 파생된 패턴들을 학습</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 차트 강의 (6강)</h4>
+                        <h4>월클 차트 강의 (7강)</h4>
                         <ol>
-                            <li>이평선 실전투자의 비밀 - 심화편</li>
-                            <li>주봉 돌파매매 확장편 - 주도주 사골매매</li>
-                            <li>주봉 상한라인 수식 설정법 + 상한선 종목선정 검색식</li>
-                            <li>시간외 급등으로 갭 음봉 후 다음 날 상승기대 공략패턴</li>
-                            <li>N 자형 내 거래대금 실린 윗꼬리 양봉 패턴</li>
-                            <li>월 1 억 버는 투자자들이 활용하는 '축구공 매매법'</li>
+                            <li>
+                                월 1 억 버는 투자자들이 활용하는 '축구공 매매법'
+                                <a href="https://suikasak789.imweb.me/60/?idx=125363856&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                평생 써먹는 밑꼬리 매매법
+                                <a href="https://suikasak789.imweb.me/60/?idx=15104401&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                N 자형 폭등 패턴
+                                <a href="https://suikasak789.imweb.me/60/?idx=15257737&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                2 일 50% 매매법
+                                <a href="https://suikasak789.imweb.me/60/?idx=15258047&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                윗꼬리 캔들 매매법
+                                <a href="https://suikasak789.imweb.me/60/?idx=15530294&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                투자경고 극비 강의
+                                <a href="https://suikasak789.imweb.me/60/?idx=16309621&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                시간외 급등으로 갭 음봉 후 다음 날 상승기대 공략패턴
+                                <a href="https://suikasak789.imweb.me/60/?idx=85653968&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <p>
+                            <strong>해당 패턴으로 과거 차트 3개 찾아보세요.</strong><br>
+                            사실, 자주 나타나는 패턴은 아닙니다. 다만, 나타날 경우, 상대적으로 단기수익을 확률높게 주는 패턴들입니다. 따라서, 각 차트패턴에 해당되는 것들을 3개씩 찾아보세요.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 9 -->
+            <!-- WEEK 9 -->
             <div class="week-box">
                 <div class="week-header finance">
-                    <h3>9주차 - 재무 분석 기초</h3>
+                    <h3>WEEK 9 수급/재무강의: 모르면 상폐 맞는다.</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
+                            <li>기관/외국인/프로그램 순매수 해석하기</li>
                             <li>중장기와 단기 관점에서 필수적으로 확인해야 할 재무 항목 정리</li>
-                            <li>급작스러운 유상증자·전환사채 등 악재를 피할 수 있는 기본 재무 지표 숙지</li>
+                            <li>갑작스러운 유상증자·전환사채 등 악재를 피할 수 있는 기본 재무 지표 숙지</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 재무 강의 (2강)</h4>
+                        <h4>월클 수급/재무 강의 (4강)</h4>
                         <ol>
-                            <li>중장기로 들고가는 종목에서 꼭 체크해야 할 재무제표</li>
-                            <li>'단기매매용 재무제표'를 알면 월급독립이 보인다</li>
+                            <li>
+                                '단기매매용 재무제표'를 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/231108162554146mi" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                중장기로 들고가는 종목에서 꼭 체크해야 할 재무제표
+                                <a href="https://suikasak789.imweb.me/60/?idx=16609174&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                수급주의 폭등시그널
+                                <a href="https://suikasak789.imweb.me/60/?idx=15737680&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주식고수들은 모두 써먹는 '프로그램 매매' 보는 법
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/240805152817033fk" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <p>
+                            <strong>매매하는 종목에 수급/재무를 항상 체크하세요.</strong><br>
+                            차트/수급은 단기 방향성을 보여주지만, 재무는 장기 방향성을 결정합니다. 장기 방향성이 우하향이면, 차트/수급이 강해 돈이 들어오더라도 저항 맞습니다. 그리고, 재무를 안보면 언젠가 상폐 맞습니다. 돈을 버는 것보다 잃지 않는 것이 중요합니다. 재무2강 밖에 없지만, 여러분들의 노후를 지켜줄 강의입니다.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Week 10 -->
+            <!-- WEEK 10 -->
             <div class="week-box">
                 <div class="week-header material">
-                    <h3>10주차 - 재료 분석 기초</h3>
+                    <h3>WEEK 10 재료강의1: '재료'를 알면 월급독립이 보인다</h3>
                     <span class="arrow">▼</span>
                 </div>
                 <div class="week-content">
                     <div class="week-objective">
                         <h4>학습 목표</h4>
                         <ul>
-                            <li>재료(테마, 이슈) 선정 기준 파악</li>
-                            <li>'짧은 재료 vs 긴 재료' 구분법 및 차트와의 결합 방식 이해</li>
+                            <li>재료 기초 개념정립</li>
                         </ul>
                     </div>
                     
                     <div class="lectures-list">
-                        <h4>월클 재료 강의 (4강)</h4>
+                        <h4>월클 재료 강의 (5강)</h4>
                         <ol>
-                            <li>'재료'를 알면 월급독립이 보인다</li>
-                            <li>'재료의 통로'를 알면 월급독립이 보인다</li>
-                            <li>'100% 이상 오르는 이슈의 공통점'을 알면 월급독립이 보인다</li>
-                            <li>'재료 4 가지'만 알면 월급독립이 보인다</li>
+                            <li>
+                                재료공부를 하면, 주식이 쉬워진다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/250107153051021yg" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '재료'를 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230906135842071vz" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '재료의 통로'를 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230913183116942du" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '100% 이상 오르는 이슈의 공통점'을 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230920180948299cl" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '재료 4 가지'만 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/230927190752919lw" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
                         </ol>
                     </div>
                     
                     <div class="assignment">
                         <h4>과제</h4>
-                        <p>추후 안내 예정</p>
+                        <p>
+                            <strong>내가 매매하는 종목의 재료가 재료의 4가지 중 어디에 해당하는 지 봐보세요.</strong><br>
+                            4가지 성격에 따라, 주가 궤적이 달라지기 때문에 내가 투자하는 재료가 어디에 해당하는 지 보세요.
+                        </p>
                     </div>
                 </div>
             </div>
 
-<!-- Week 11 -->
-<div class="week-box">
-    <div class="week-header material">
-        <h3>11주차 - 재료 심화 분석</h3>
-        <span class="arrow">▼</span>
-    </div>
-    <div class="week-content">
-        <div class="week-objective">
-            <h4>학습 목표</h4>
-            <ul>
-                <li>재료가 시장(지수)와 맞물려 크게 폭발할 때의 패턴 숙지</li>
-                <li>강한 재료들의 공통점과 실제 매매사례 확인</li>
-            </ul>
-        </div>
-        
-        <div class="lectures-list">
-            <h4>월클 재료 강의 (5강)</h4>
-            <ol>
-                <li>'차트와 재료의 관계'를 알면 월급독립이 보인다</li>
-                <li>'강한 재료의 특징'을 알면 월급독립이 보인다</li>
-                <li>'지수와 재료의 상관관계'를 알면 월급독립이 보인다</li>
-                <li>재료공부를 하면, 주식이 쉬워진다</li>
-                <li>주식공부 '헛고생' 하지말고 '월클재료'에 주목하세요.</li>
-            </ol>
-        </div>
-        
-        <div class="assignment">
-            <h4>과제</h4>
-            <p>추후 안내 예정</p>
-        </div>
-    </div>
-</div>
-
-        <!-- Week 12 -->
-        <div class="week-box">
-            <div class="week-header market">
-                <h3>12주차 - 시장 대응 전략</h3>
-                <span class="arrow">▼</span>
-            </div>
-            <div class="week-content">
-                <div class="week-objective">
-                    <h4>학습 목표</h4>
-                    <ul>
-                        <li>시장 국면별(하락장·폭락장 등) 대응전략 수립</li>
-                        <li>'지수 흐름 & 수급' 분석을 통해 종합적인 포트폴리오 운용 능력 키우기</li>
-                    </ul>
+            <!-- WEEK 11 -->
+            <div class="week-box">
+                <div class="week-header material">
+                    <h3>WEEK 11 재료강의2: 주식으로 100억 넘게 번 슈퍼개미가 알려주는 재료의 비밀</h3>
+                    <span class="arrow">▼</span>
                 </div>
-                
-                <div class="lectures-list">
-                    <h4>월클 시장 강의 (5강)</h4>
-                    <ol>
-                        <li>500 만 원으로 1100 억을 만든 쿨라매기가 알려주는 '매매를 쉬어가야 할 때'</li>
-                        <li>지수 낙폭과대 필승 매매법 (지수의 고점과 저점 특징, 반등 초입 대응전략)</li>
-                        <li>주식시장을 이해하기 위해 무조건 봐야 할 영상</li>
-                        <li>09/25 장중 번개방송 녹화본</li>
-                        <li>최근 시장의 특징(수급주들의 폭등시그널)</li>
-                    </ol>
-                </div>
-                
-                <div class="assignment">
-                    <h4>과제</h4>
-                    <p>추후 안내 예정</p>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>차트/지수와 재료 결합해서 사고하기</li>
+                            <li>강한 재료의 특징 파악하기</li>
+                            <li>100억 슈퍼개미 관점으로 재료 해석하기</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 재료 강의 (5강)</h4>
+                        <ol>
+                            <li>
+                                '차트와 재료의 관계'를 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/231011173714491fa" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '강한 재료의 특징'을 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/231018182253857rw" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                '지수와 재료의 상관관계'를 알면 월급독립이 보인다
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/231025155513820wq" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주식으로 100억 넘게 번 슈퍼개미가 알려주는 재료의 비밀
+                                <a href="https://www.youtube.com/watch?v=cYf-vUCWuL0" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주식공부 '헛고생' 하지말고 '월클재료'에 주목하세요.
+                                <a href="https://suikasak789.imweb.me/60/?idx=137031378&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>
+                            <strong>여러분들이 매매하는 종목이 시대중심주, 섹터중심주, 이슈중심주 중 어디에 해당되는 지 보세요.</strong><br>
+                            그리고, 월클 핵심재료랭킹 컨텐츠와 비교해보세요.
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- WEEK 12 -->
+            <div class="week-box">
+                <div class="week-header market">
+                    <h3>WEEK 12 시장강의: 1100 억을 트레이더의 '시장 보는 법'</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="week-content">
+                    <div class="week-objective">
+                        <h4>학습 목표</h4>
+                        <ul>
+                            <li>시장 국면별(하락장·폭락장 등) 대응전략 수립</li>
+                            <li>'지수 흐름 & 수급' 분석을 통해 종합적인 포트폴리오 운용 능력 키우기</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lectures-list">
+                        <h4>월클 시장 강의 (3강)</h4>
+                        <ol>
+                            <li>
+                                500 만 원으로 1100 억을 만든 쿨라매기가 알려주는 '매매를 쉬어가야 할 때'
+                                <a href="https://suikasak789.imweb.me/60/?idx=74209026&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                지수 낙폭과대 필승 매매법 (지수의 고점과 저점 특징, 반등 초입 대응전략)
+                                <a href="https://contents.premium.naver.com/suikasak724/suikasak725/contents/240416173101348ve" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                            <li>
+                                주식시장을 이해하기 위해 무조건 봐야 할 영상
+                                <a href="https://suikasak789.imweb.me/60/?idx=16665727&bmode=view" target="_blank">
+                                    강의 보기 <span class="link-icon">→</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="assignment">
+                        <h4>과제</h4>
+                        <p>
+                            <strong>매매를 쉬어야 할 때, 비중을 늘려야 할 때를 개인적으로 정립해보세요.</strong><br>
+                            이 정립이 여러분들의 안전벨트 역할을 해줄 겁니다. 대부분 지수 좋을 때, 비중 늘리다 지수 하락에 수익을 토해내며 시간낭비합니다. 그러지 않기 위해선 지수에 따른 쉬어가는 기준, 비중 늘리고 줄이는 기준이 필요합니다. 쿨라매기 강의로 기준을 삼아 보세요.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <section class="summary" style="margin-top: 40px; background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
+            <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8rem;">3개월 슈퍼개미 프로젝트 정리</h2>
+            <p style="font-size: 1.1rem;">
+                이 12주 과정을 통해 주식투자의 모든 영역(공부법 → 차트 → 재무 → 재료 → 시장)을 체계적으로 학습하게 됩니다. 특히 '상한파이브'라는 통합적 관점으로 시장을 바라보는 법을 익히게 될 것입니다.
+            </p>
+            <p style="margin-top: 15px; font-size: 1.1rem;">
+                초반 3주는 실제 매매없이 관찰과 학습에 집중함으로써 안정적인 기초를 다지고, 이후 단계별로 실전 매매 스킬을 쌓아가는 구조로 설계되어 있습니다.
+            </p>
+            <p style="margin-top: 15px; font-size: 1.1rem;">
+                '주식시장에서 이젠 정말 독립할 만한 실력을 갖추고 싶다'는 분들에게 이 3개월 플랜이 큰 도움이 될 것입니다.
+            </p>
+        </section>
     </div>
 
-    <section class="summary" style="margin-top: 40px; background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);">
-        <h2 style="color: var(--primary); margin-bottom: 20px;">3개월 플랜 정리</h2>
-        <p>
-            이 12주 과정을 통해 주식투자의 모든 영역(공부법 → 차트 → 재무 → 재료 → 시장)을 체계적으로 학습하게 됩니다.
-            특히 '상한파이브'라는 통합적 관점으로 시장을 바라보는 법을 익히게 될 것입니다.
-        </p>
-        <p style="margin-top: 15px;">
-            초반 3주는 실제 매매없이 관찰과 학습에 집중함으로써 안정적인 기초를 다지고,
-            이후 단계별로 실전 매매 스킬을 쌓아가는 구조로 설계되어 있습니다.
-        </p>
-        <p style="margin-top: 15px;">
-            '지금부터라도 월클을 100% 제대로 활용하고 싶다'는 분들, 
-            '주식시장에서 이젠 정말 독립할 만한 실력을 갖추고 싶다'는 분들에게 
-            이 3개월 플랜이 큰 도움이 될 것입니다.
-        </p>
-    </section>
-</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const weekHeaders = document.querySelectorAll('.week-header');
+            
+            // 각 주차 헤더 클릭 이벤트
+            weekHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('active');
+                    this.classList.toggle('active');
+                    
+                    // 화살표 표시 전환
+                    const arrow = this.querySelector('.arrow');
+                    if (content.classList.contains('active')) {
+                        arrow.textContent = '▲';
+                    } else {
+                        arrow.textContent = '▼';
+                    }
+                });
+            });
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const weekHeaders = document.querySelectorAll('.week-header');
-        const weekBoxes = document.querySelectorAll('.week-box');
-        
-        // Progress tracking (use in-memory variable instead of localStorage)
-        let completedWeeks = [];
-        
-        // Initialize progress indicators
-        weekBoxes.forEach((box, index) => {
-            const weekNum = index + 1;
-            const header = box.querySelector('.week-header');
-            
-            // Add progress indicator to each week header
-            const progressIndicator = document.createElement('div');
-            progressIndicator.className = 'progress-indicator';
-            progressIndicator.style.marginRight = '10px';
-            progressIndicator.style.width = '20px';
-            progressIndicator.style.height = '20px';
-            progressIndicator.style.borderRadius = '50%';
-            progressIndicator.style.backgroundColor = completedWeeks.includes(weekNum) ? '#34a853' : '#dadce0';
-            progressIndicator.style.display = 'flex';
-            progressIndicator.style.justifyContent = 'center';
-            progressIndicator.style.alignItems = 'center';
-            progressIndicator.style.color = 'white';
-            progressIndicator.style.fontSize = '12px';
-            progressIndicator.style.fontWeight = 'bold';
-            progressIndicator.innerHTML = completedWeeks.includes(weekNum) ? '✓' : '';
-            
-            // Insert at beginning of header
-            header.insertBefore(progressIndicator, header.firstChild);
-            
-            // Modify header display to accommodate the indicator
-            header.style.display = 'flex';
-            header.style.justifyContent = 'space-between';
-            header.style.alignItems = 'center';
-            
-            // Add checkbox for completion within the content
-            const content = box.querySelector('.week-content');
-            const completeBox = document.createElement('div');
-            completeBox.className = 'complete-box';
-            completeBox.style.marginTop = '20px';
-            completeBox.style.padding = '15px';
-            completeBox.style.backgroundColor = '#f0f8ff';
-            completeBox.style.borderRadius = '8px';
-            completeBox.style.display = 'flex';
-            completeBox.style.alignItems = 'center';
-            
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = `week-${weekNum}-complete`;
-            checkbox.checked = completedWeeks.includes(weekNum);
-            checkbox.style.marginRight = '10px';
-            checkbox.style.width = '20px';
-            checkbox.style.height = '20px';
-            
-            const label = document.createElement('label');
-            label.htmlFor = `week-${weekNum}-complete`;
-            label.textContent = `${weekNum}주차 강의를 완료했어요!`;
-            label.style.fontWeight = 'bold';
-            label.style.cursor = 'pointer';
-            
-            completeBox.appendChild(checkbox);
-            completeBox.appendChild(label);
-            content.appendChild(completeBox);
-            
-            // Event listener for checkbox
-            checkbox.addEventListener('change', function() {
-                if (this.checked) {
-                    if (!completedWeeks.includes(weekNum)) {
-                        completedWeeks.push(weekNum);
-                        progressIndicator.style.backgroundColor = '#34a853';
-                        progressIndicator.innerHTML = '✓';
-                    }
-                } else {
-                    const index = completedWeeks.indexOf(weekNum);
-                    if (index > -1) {
-                        completedWeeks.splice(index, 1);
-                        progressIndicator.style.backgroundColor = '#dadce0';
-                        progressIndicator.innerHTML = '';
-                    }
-                }
-                updateProgress();
-            });
+            // ★ 처음 로드 시, 모든 주차는 접힌 상태를 유지하도록 별도의 열기 코드는 생략합니다.
         });
-        
-        // Add progress bar to the top
-        const container = document.querySelector('.container');
-        const header = document.querySelector('header');
-        
-        const progressContainer = document.createElement('div');
-        progressContainer.className = 'progress-container';
-        progressContainer.style.backgroundColor = 'white';
-        progressContainer.style.padding = '20px';
-        progressContainer.style.borderRadius = '12px';
-        progressContainer.style.marginBottom = '30px';
-        progressContainer.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-        
-        const progressTitle = document.createElement('h2');
-        progressTitle.textContent = '학습 진행 상황';
-        progressTitle.style.color = 'var(--primary)';
-        progressTitle.style.marginBottom = '15px';
-        
-        const progressBarContainer = document.createElement('div');
-        progressBarContainer.style.width = '100%';
-        progressBarContainer.style.height = '15px';
-        progressBarContainer.style.backgroundColor = '#f1f3f4';
-        progressBarContainer.style.borderRadius = '10px';
-        progressBarContainer.style.overflow = 'hidden';
-        
-        const progressBar = document.createElement('div');
-        progressBar.className = 'progress-bar';
-        progressBar.style.height = '100%';
-        progressBar.style.width = `${(completedWeeks.length / 12) * 100}%`;
-        progressBar.style.backgroundColor = 'var(--secondary)';
-        progressBar.style.transition = 'width 0.3s ease';
-        
-        const progressText = document.createElement('div');
-        progressText.className = 'progress-text';
-        progressText.style.marginTop = '10px';
-        progressText.style.display = 'flex';
-        progressText.style.justifyContent = 'space-between';
-        
-        const progressPercentage = document.createElement('span');
-        progressPercentage.textContent = `${Math.round((completedWeeks.length / 12) * 100)}% 완료`;
-        progressPercentage.style.fontWeight = 'bold';
-        
-        const progressCount = document.createElement('span');
-        progressCount.textContent = `${completedWeeks.length}/12 강의 완료`;
-        
-        progressText.appendChild(progressPercentage);
-        progressText.appendChild(progressCount);
-        
-        progressBarContainer.appendChild(progressBar);
-        progressContainer.appendChild(progressTitle);
-        progressContainer.appendChild(progressBarContainer);
-        progressContainer.appendChild(progressText);
-        
-        container.insertBefore(progressContainer, header.nextSibling);
-        
-        function updateProgress() {
-            progressBar.style.width = `${(completedWeeks.length / 12) * 100}%`;
-            progressPercentage.textContent = `${Math.round((completedWeeks.length / 12) * 100)}% 완료`;
-            progressCount.textContent = `${completedWeeks.length}/12 강의 완료`;
-        }
-        
-        // Click event for week headers
-        weekHeaders.forEach(header => {
-            header.addEventListener('click', function() {
-                const content = this.nextElementSibling;
-                content.classList.toggle('active');
-                this.classList.toggle('active');
-                
-                // Toggle arrow rotation
-                const arrow = this.querySelector('.arrow');
-                if (content.classList.contains('active')) {
-                    arrow.textContent = '▲';
-                } else {
-                    arrow.textContent = '▼';
-                }
-            });
-        });
-        
-        // Open first week by default
-        document.querySelector('.week-content').classList.add('active');
-        document.querySelector('.week-header').classList.add('active');
-        document.querySelector('.week-header .arrow').textContent = '▲';
-        
-        // Add reset button
-        const resetButton = document.createElement('button');
-        resetButton.textContent = '진행 상황 초기화';
-        resetButton.style.marginTop = '15px';
-        resetButton.style.padding = '8px 16px';
-        resetButton.style.backgroundColor = '#f1f3f4';
-        resetButton.style.border = 'none';
-        resetButton.style.borderRadius = '4px';
-        resetButton.style.cursor = 'pointer';
-        resetButton.style.float = 'right';
-        
-        resetButton.addEventListener('click', function() {
-            if (confirm('진행 상황을 초기화하시겠습니까?')) {
-                completedWeeks = [];
-                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-                    checkbox.checked = false;
-                });
-                document.querySelectorAll('.progress-indicator').forEach(indicator => {
-                    indicator.style.backgroundColor = '#dadce0';
-                    indicator.innerHTML = '';
-                });
-                updateProgress();
-            }
-        });
-        
-        progressContainer.appendChild(resetButton);
-    });
-</script>
-    </body>
+    </script>
+</body>
 </html>
